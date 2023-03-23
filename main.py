@@ -29,9 +29,9 @@ def check_winnings(columns, lines, bet, values):
             symbol_to_check = column[line]
             if symbol != symbol_to_check:
                 break
-            else:
-                winnings += values[symbol] * bet
-                winning_lines.append(line + 1)
+        else:
+            winnings += values[symbol] * bet
+            winning_lines.append(line + 1)
     return winnings, winning_lines
 
 
@@ -136,7 +136,7 @@ def main():
     balance = deposit()
     while True:
         print(f"Current balance is ${balance}")
-        game = input("Press enter to spin(q to quit).")
+        game = input("Press enter to spin(q to quit). ")
         if game == "q":
             break
         else:
